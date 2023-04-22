@@ -58,23 +58,158 @@ style="background-image: url('assets/elle-coc-ho8hUqKBAnM-unsplash\ \(1\).jpg');
     <label class="form-label" for="form1">enter a city</label>
     </div>
     <br>
-  <a href="#!" class="btn btn-outline-light">Button</a>
+  <a href="#!" id="submit" class="btn btn-outline-light">Search</a>
 </div>
 </div>
-<!-- Card -->
-  <div class="card text-center">
+<!-- Card 
+  <div class="card text-center" id="weather-info">
     
     <div class="card-body">
-      <h5 class="card-title">Not sure whether or not you should go?</h5>
-      <p class="card-text">
-        Enter your destination below and see if the conditions suit your trip plans
-      </p>
-      <div class="form-outline">
-        <input type="text" id="form1" class="form-control" />
-        <label class="form-label" for="form1">enter a city</label>
+      <div class="date-container">
+        <div class="time" id="time">
+          current time <span id="am-pm">PM</span>
         </div>
-        <br>
-      <a href="#" class="btn btn-primary">Button</a>
+        <div class="date" id="date">Saturday April 22nd 2023</div>
+      </div>
+      <div class="card-columns">
+        <div class="Current">
+          <img class="card-img-top" src="holder.js/100x180/" alt="weather-icon">
+          <div class="card-body">
+            <h4 class="card-title">Current conditions</h4>
+            <p class="card-text">
+              <div class="temp" id="temp">Temperatue :88 Degrees F</div>
+              <div class="humidity" id="humidity">Humidity 32%</div>
+              <div class="wind">Wind Speed: 5mph ese</div>
+            </p>
+          </div>
+        </div>
+        <div class="five-day">
+          <img class="card-img-top" src="holder.js/100x180/" alt="weather-icon">
+          <div class="card-body">
+            <h4 class="card-title">5-day forecast</h4>
+            <p class="card-text">Text</p>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <img class="card-img-top" src="holder.js/100x180/" alt="weather-icon">
+        <div class="card-body">
+          <h4 class="card-title">previous searches</h4>
+          <p class="card-text">Text</p>
+        </div>
+      </div>
+    </div>
+    
+      
+    </div>-->
+    <div class="accordion accordion-flush" id="accordionFlushExample">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingOne">
+          <button
+            class="accordion-button collapsed"
+            type="button"
+            data-mdb-toggle="collapse"
+            data-mdb-target="#flush-collapseOne"
+            aria-expanded="false"
+            aria-controls="flush-collapseOne"
+          >
+            Current Conditions
+          </button>
+        </h2>
+        <div
+          id="flush-collapseOne"
+          class="accordion-collapse collapse"
+          aria-labelledby="flush-headingOne"
+          data-mdb-parent="#accordionFlushExample"
+        >
+          <div class="accordion-body text-white">
+           <p id="date">April 20th 2023</p>
+           <p id="temp">88F</p>
+           <p id="wind">5 mph</p>
+           <p id="hum">33%</p>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingTwo">
+          <button
+            class="accordion-button collapsed"
+            type="button"
+            data-mdb-toggle="collapse"
+            data-mdb-target="#flush-collapseTwo"
+            aria-expanded="false"
+            aria-controls="flush-collapseTwo"
+          >
+            5-Day Forecast
+          </button>
+        </h2>
+        <div
+          id="flush-collapseTwo"
+          class="accordion-collapse collapse"
+          aria-labelledby="flush-headingTwo"
+          data-mdb-parent="#accordionFlushExample"
+        >
+          <div class="accordion-body d-flex justify-content-evenly">
+            <div class="card" style="width: 18rem;">
+              <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/182.webp" class="card-img-top" alt="Sunset Over the Sea"/>
+              <div class="card-body">
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              </div>
+            </div><div class="card" style="width: 18rem;">
+              <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/182.webp" class="card-img-top" alt="Sunset Over the Sea"/>
+              <div class="card-body">
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              </div>
+            </div><div class="card" style="width: 18rem;">
+              <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/182.webp" class="card-img-top" alt="Sunset Over the Sea"/>
+              <div class="card-body">
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              </div>
+            </div><div class="card" style="width: 18rem;">
+              <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/182.webp" class="card-img-top" alt="Sunset Over the Sea"/>
+              <div class="card-body">
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              </div>
+            </div><div class="card" style="width: 18rem;">
+              <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/182.webp" class="card-img-top" alt="Sunset Over the Sea"/>
+              <div class="card-body">
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingThree">
+          <button
+            class="accordion-button collapsed"
+            type="button"
+            data-mdb-toggle="collapse"
+            data-mdb-target="#flush-collapseThree"
+            aria-expanded="false"
+            aria-controls="flush-collapseThree"
+          >
+            Past searches
+          </button>
+        </h2>
+        <div
+          id="flush-collapseThree"
+          class="accordion-collapse collapse"
+          aria-labelledby="flush-headingThree"
+          data-mdb-parent="#accordionFlushExample"
+        >
+          <div class="accordion-body">
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
+            richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor
+            brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor,
+            sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch
+            et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt
+            sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat
+            craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't
+            heard of them accusamus labore sustainable VHS.
+          </div>
+        </div>
+      </div>
     </div>
     <div class="card-footer text-muted">placeholder for previous search</div>
   </div>
