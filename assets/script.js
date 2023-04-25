@@ -54,6 +54,7 @@ fetch(queryURL)
   .then(response => response.json())
   .then(data => {
     temp = data.main.temp;
+    console.log(temp);
     hum = data.main.humidity;
     wind= data.wind.speed;
     icon= data.weather[0].icon;
@@ -100,15 +101,34 @@ fetch(queryURL)
   ddFiveDay.addEventListener("click", () => {
     var location = locationInput.value;
     var apiKey = "826f633421f0289a9fa069f465862d53";
-    let fiveDayURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&appid=" + apiKey;
+    let fiveDayURL = `http://api.openweathermap.org/data/2.5/forecast?q=${location}&appid=${apiKey}&units=imperial`
   
     fetch(fiveDayURL)
     .then(response => response.json())
     .then(data => {
      console.log(data);
+     main = data.city.name;
+     console.log(main);
+     temp = data.list[0].main.temp;
+     console.log(temp);
+     wind= data.wind.speed;
+     icon= data.weather[0].icon;
+     city = data.name;
+     date = data.sys.dt_txt;
+
+     const myArray = ['Item 1', 'Item 2', 'Item 3', 'Item 4', 'Item 5', 'Item 6', 'Item 7', 'Item 8'];
+const myElement = document.querySelector('#myElement');
+
+for (let i = 0; i < 5 && i < myArray.length; i++) {
+  const item = myArray[i];
+  const newItemElement = document.createElement('p');
+  newItemElement.textContent = item;
+  myElement.appendChild(newItemElement);
+}
     })
     .catch(error => {
       console.error(error);
     });
   })
+
   
