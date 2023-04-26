@@ -141,7 +141,7 @@ for (let i = 0; i < 5 && i < myArray.length; i++) {
   ddFiveDay.addEventListener("click", () => {
     var location = locationInput.value;
     var apiKey = "826f633421f0289a9fa069f465862d53";
-    let fiveDayURL = `http://api.openweathermap.org/data/2.5/forecast?q=${location}&cnt=5&appid=${apiKey}&units=imperial`
+    let fiveDayURL = `http://api.openweathermap.org/data/2.5/forecast?q=${location}&cnt=40&appid=${apiKey}&units=imperial`
   
     fetch(fiveDayURL)
       .then(response => response.json())
