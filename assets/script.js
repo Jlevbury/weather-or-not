@@ -98,10 +98,10 @@ fetch(queryURL)
   });
 
   });
-  ddFiveDay.addEventListener("click", () => {
+ /* ddFiveDay.addEventListener("click", () => {
     var location = locationInput.value;
     var apiKey = "826f633421f0289a9fa069f465862d53";
-    let fiveDayURL = `http://api.openweathermap.org/data/2.5/forecast?q=${location}&appid=${apiKey}&units=imperial`
+    let fiveDayURL = `http://api.openweathermap.org/data/2.5/forecast?q=${location}&cnt=5&appid=${apiKey}&units=imperial`
   
     fetch(fiveDayURL)
     .then(response => response.json())
@@ -110,14 +110,22 @@ fetch(queryURL)
      main = data.city.name;
      console.log(main);
      temp = data.list[0].main.temp;
-     console.log(temp);
-     wind= data.wind.speed;
-     icon= data.weather[0].icon;
-     city = data.name;
-     date = data.sys.dt_txt;
+     //console.log(temp);
+     wind= data.list[0].wind.speed;
+     //console.log(wind);
+     icon= data.list[0].weather[0].icon;
+    // console.log(icon);
+       date = data.list[0].dt_txt;// need to figure out how to only collect 5 days, instead of 40 different hour slots.
+    // console.log(date);
+      hum = data.list[0].main.humidity;
+      console.log(hum)
 
-     const myArray = ['Item 1', 'Item 2', 'Item 3', 'Item 4', 'Item 5', 'Item 6', 'Item 7', 'Item 8'];
-const myElement = document.querySelector('#myElement');
+
+   var dayOne =[main];
+   console.log(dayOne);
+     const myArray = ['main', 'temp', 'wind', 'hum','icon', 'date'];
+     //console.log(myArray);
+const myElement = document.querySelector('#five-day');
 
 for (let i = 0; i < 5 && i < myArray.length; i++) {
   const item = myArray[i];
@@ -129,6 +137,72 @@ for (let i = 0; i < 5 && i < myArray.length; i++) {
     .catch(error => {
       console.error(error);
     });
-  })
-
+  })*/
+  ddFiveDay.addEventListener("click", () => {
+    var location = locationInput.value;
+    var apiKey = "826f633421f0289a9fa069f465862d53";
+    let fiveDayURL = `http://api.openweathermap.org/data/2.5/forecast?q=${location}&cnt=5&appid=${apiKey}&units=imperial`
+  
+    fetch(fiveDayURL)
+      .then(response => response.json())
+      .then(data => {
+        console.log(data);
+  
+        // create parent element
+        var forecastData = document.createElement("div");
+        forecastData.setAttribute("id", "forecast-data");
+  
+        for (let i = 0; i < data.list.length; i += 8) {
+          const day = data.list[i];
+  
+          const date = new Date(day.dt * 1000).toLocaleDateString();
+          const temp = day.main.temp;
+          const humidity = day.main.humidity;
+          const windSpeed = day.wind.speed;
+          const iconUrl = `http://openweathermap.org/img/w/${day.weather[0].icon}.png`;
+  
+          // create child elements
+          var dayEl = document.createElement("div");
+          dayEl.classList.add("day");
+  
+          var dateEl = document.createElement("p");
+          dateEl.innerHTML = date;
+  
+          var iconEl = document.createElement("img");
+          iconEl.src = iconUrl;
+  
+          var tempEl = document.createElement("p");
+          tempEl.innerHTML = `Temperature: ${temp} &#8457;`;
+  
+          var humidityEl = document.createElement("p");
+          humidityEl.innerHTML = `Humidity: ${humidity}%`;
+  
+          var windSpeedEl = document.createElement("p");
+          windSpeedEl.innerHTML = `Wind Speed: ${windSpeed} mph`;
+  
+          // append child elements to day element
+          dayEl.appendChild(dateEl);
+          dayEl.appendChild(iconEl);
+          dayEl.appendChild(tempEl);
+          dayEl.appendChild(humidityEl);
+          dayEl.appendChild(windSpeedEl);
+  
+          // append day element to parent element
+          forecastData.appendChild(dayEl);
+        }
+  
+        // remove any existing forecast data
+        var existingForecastData = document.querySelector("#forecast-data");
+        if (existingForecastData) {
+          existingForecastData.remove();
+        }
+  
+        // append parent element to forecast section
+        var forecastSection = document.querySelector("#forecast");
+        forecastSection.appendChild(forecastData);
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  });
   
