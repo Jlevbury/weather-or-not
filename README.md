@@ -1,102 +1,35 @@
-# 06 Server-Side APIs: Weather Dashboard
+# weather forecast application
+https://jlevbury.github.io/weather-or-not/ 
 
-## Your Task
+## Description
+This weeks challenge was create from scratch, a application that allows a user to enter a city name, retrieve the current weather conditions and a five day forecast. Additionally, when a new city is searched, the previous city is stored into the users local storage. Upon clicking the cities name in the previously searched section, the current and five day forecast fields will populate with the updated information reflecting any date changes. The information displayed contains the current temperature, humidity, windspeed and an icon infographic of the weather conditions.
 
-Third-party APIs allow developers to access their data and functionality by making requests with specific parameters to a URL. Developers are often tasked with retrieving data from another application's API and using it in the context of their own. Your challenge is to build a weather dashboard that will run in the browser and feature dynamically updated HTML and CSS.
 
-Use the [5 Day Weather Forecast](https://openweathermap.org/forecast5) to retrieve weather data for cities. The base URL should look like the following: `https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={API key}`. After registering for a new API key, you may need to wait up to 2 hours for that API key to activate.
+## Learning Experience
+During the process of completing this project, I identified several weak points in my JavaScript working knowledge and intend to reinforce those weaknesses moving forward based off of my experience with this weeks challenge. Creating a local storage item, then creating a callback function that worked off of that item was uncharted territory for myself and took a bit of sleuthwork to make sure as I added code each part continued to communicate with both the API and other functions in the script correctly. 
+I utilized assistance from both my classmates and askBCS for this project , while I was able to navigate a majority of the blockages myself, when it came to some debugging of var references I needed an extra set of eyes. Additionally the extra eyes helped to point out some areas of improvement with my code logic which is another focus point for future studies. 
 
-**Hint**: Using the 5 Day Weather Forecast API, you'll notice that you will need to pass in coordinates instead of just a city name. Using the OpenWeatherMap APIs, how could we retrieve geographical coordinates given a city name?
+Some minor practice in function testing was also used during the process of developing this app based on past input from graders and interactions with askBCS.I did implement much more console logging of items as I wrote them to help prevent errors down the road, there is a clear equivalent I noticed in my code error likelyhood when I did not adhere to this my difficulties in debugging rose. So I will continue to console log and proof test my functions as they are developed after seeing the payoff in doing such.
 
-You will use `localStorage` to store any persistent data. For more information on how to work with the OpenWeather API, refer to the [Full-Stack Blog on how to use API keys](https://coding-boot-camp.github.io/full-stack/apis/how-to-use-api-keys).
 
-## User Story
 
-```
-AS A traveler
-I WANT to see the weather outlook for multiple cities
-SO THAT I can plan a trip accordingly
-```
+## Installation
+N/A
 
-## Acceptance Criteria
+## Usage
 
-```
-GIVEN a weather dashboard with form inputs
-WHEN I search for a city
-THEN I am presented with current and future conditions for that city and that city is added to the search history
-WHEN I view current weather conditions for that city
-THEN I am presented with the city name, the date, an icon representation of weather conditions, the temperature, the humidity, and the wind speed
-WHEN I view future weather conditions for that city
-THEN I am presented with a 5-day forecast that displays the date, an icon representation of weather conditions, the temperature, the wind speed, and the humidity
-WHEN I click on a city in the search history
-THEN I am again presented with current and future conditions for that city
-```
+![weatherDEMO](https://user-images.githubusercontent.com/125767916/234958144-f410a9aa-f9af-41f0-a9f8-ed48aa4f2e0d.gif)
+Typical user interface flow.
 
-## Mock-Up
+## Credits
+Source code provided via gitlab for use in coding bootcamp
+additional guidance on script formulation researched in reading of "Javascript & JQuery:interactive front-end web development" by Jon Duckett, subject of local storage, For Loops and IF/Else statements.
+Information also referenced from the docs regarding Jquery, Bootstrap and DayJs.
+https://mdbootstrap.com/docs/standard/ reference material utilized for styling of the interface using bootstrap commands.
+image credits to Elle Coc via unsplash creative commons license https://unsplash.com/@elle_coc
 
-The following image shows the web application's appearance and functionality:
+## License
 
-![The weather app includes a search option, a list of cities, and a five-day forecast and current weather conditions for Atlanta.](./Assets/06-server-side-apis-homework-demo.png)
+Please refer to the LICENSE in the repo.
 
-## Grading Requirements
 
-> **Note**: If a Challenge assignment submission is marked as “0”, it is considered incomplete and will not count towards your graduation requirements. Examples of incomplete submissions include the following:
->
-> * A repository that has no code
->
-> * A repository that includes a unique name but nothing else
->
-> * A repository that includes only a README file but nothing else
->
-> * A repository that only includes starter code
-
-This Challenge is graded based on the following criteria: 
-
-### Technical Acceptance Criteria: 40%
-
-* Satisfies all of the above acceptance criteria plus the following:
-
-    * Uses the OpenWeather API to retrieve weather data.
-
-    * Uses `localStorage` to store persistent data.
-
-### Deployment: 32%
-
-* Application deployed at live URL.
-
-* Application loads with no errors.
-
-* Application GitHub URL submitted.
-
-* GitHub repository that contains application code.
-
-### Application Quality: 15%
-
-* Application user experience is intuitive and easy to navigate.
-
-* Application user interface style is clean and polished.
-
-* Application resembles the mock-up functionality provided in the Challenge instructions.
-
-### Repository Quality: 13%
-
-* Repository has a unique name.
-
-* Repository follows best practices for file structure and naming conventions.
-
-* Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
-
-* Repository contains multiple descriptive commit messages.
-
-* Repository contains quality readme file with description, screenshot, and link to deployed application.
-
-## Review
-
-You are required to submit BOTH of the following for review:
-
-* The URL of the functional, deployed application.
-
-* The URL of the GitHub repository. Give the repository a unique name and include a readme describing the project.
-
-- - -
-© 2023 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
