@@ -2,7 +2,7 @@
 https://jlevbury.github.io/weather-or-not/ 
 
 ## Description
-This weeks challenge was create from scratch, a application that allows a user to enter a city name, retrieve the current weather conditions and a five day forecast. Additionally, when a new city is searched, the previous city is stored into the users local storage. Upon clicking the cities name in the previously searched section, the current and five day forecast fields will populate with the updated information reflecting any date changes. The information displayed contains the current temperature, humidity, windspeed and an icon infographic of the weather conditions.
+This weeks challenge was create from scratch, an application that allows a user to enter a city name, retrieve the current weather conditions and a five day forecast. Additionally, when a new city is searched, the previous city is stored into the users local storage. Upon clicking the cities name in the previously searched section, the current and five day forecast fields will populate with the updated information reflecting any date changes. The information displayed contains the current temperature, humidity, windspeed and an icon infographic of the weather conditions.
 
 
 ## Learning Experience
