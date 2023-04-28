@@ -1,9 +1,9 @@
 var apiKey = "826f633421f0289a9fa069f465862d53"
 var cityName = document.querySelector("#location").value;
 
-let queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&appid=" + apiKey + "&units=imperial";
+let queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&appid=" + apiKey + "&units=imperial";
 console.log(queryURL);
-let fiveDayURL = "http://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&appid=" + apiKey+ "&units=imperial";
+let fiveDayURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&appid=" + apiKey+ "&units=imperial";
 console.log(fiveDayURL);
 var date = document.querySelector("#date");
 var temp = document.querySelector("#temp");
@@ -36,7 +36,7 @@ $(document).ready(function() {
 
 function getCurrentForecast(cityName) {
   
-  var queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&appid=" + apiKey+ "&units=imperial";
+  var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&appid=" + apiKey+ "&units=imperial";
  
   fetch(queryURL)
     .then(response => response.json())
@@ -69,7 +69,7 @@ function getCurrentForecast(cityName) {
       windEl.innerHTML = "Wind Speed: " + wind;
 
       var iconEl = document.createElement("img");
-      iconEl.src = "http://openweathermap.org/img/w/" + icon + ".png";
+      iconEl.src = "https://openweathermap.org/img/w/" + icon + ".png";
 
       var cityEl = document.createElement("p");
       cityEl.innerHTML = "City: " + city;
@@ -90,7 +90,7 @@ function getCurrentForecast(cityName) {
 }
 
 function getFiveDayForecast(cityName) {
-  var fiveDayURL = "http://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&appid=" + apiKey+ "&units=imperial";
+  var fiveDayURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&appid=" + apiKey + "&units=imperial";
 
 fetch(fiveDayURL)
   .then(response => response.json())
@@ -108,7 +108,7 @@ fetch(fiveDayURL)
       const temp = day.main.temp;
       const humidity = day.main.humidity;
       const windSpeed = day.wind.speed;
-      const iconUrl = `http://openweathermap.org/img/w/${day.weather[0].icon}.png`;
+      const iconUrl = `https://openweathermap.org/img/w/${day.weather[0].icon}.png`;
 
       // create child elements
       var dayEl = document.createElement("div");
@@ -169,7 +169,7 @@ submitBtn.addEventListener("click", () => {
     storedCities.push(location);
     localStorage.setItem("cities", JSON.stringify(storedCities));
   }
-    var queryURL = `http://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${apiKey}&units=imperial`;
+  var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&appid=" + apiKey+ "&units=imperial";
     
    // Call the fetch function with the query URL
 fetch(queryURL)
@@ -202,7 +202,7 @@ currWeather.innerHTML = "";
     windEl.innerHTML = "Wind Speed: " + wind;
 
     var iconEl = document.createElement("img");
-    iconEl.src = "http://openweathermap.org/img/w/" + icon + ".png";
+    iconEl.src = "https://openweathermap.org/img/w/" + icon + ".png";
 
     var cityEl = document.createElement("p");
     cityEl.innerHTML = "City: " + city;
@@ -250,7 +250,7 @@ currWeather.innerHTML = "";
 
   ddFiveDay.addEventListener("click", () => {
     var location = locationInput.value;
-    let fiveDayURL = `http://api.openweathermap.org/data/2.5/forecast?q=${location}&cnt=40&appid=${apiKey}&units=imperial`
+    let fiveDayURL = `https://api.openweathermap.org/data/2.5/forecast?q=${location}&cnt=40&appid=${apiKey}&units=imperial`
   
     fetch(fiveDayURL)
       .then(response => response.json())
@@ -268,7 +268,7 @@ currWeather.innerHTML = "";
           const temp = day.main.temp;
           const humidity = day.main.humidity;
           const windSpeed = day.wind.speed;
-          const iconUrl = `http://openweathermap.org/img/w/${day.weather[0].icon}.png`;
+          const iconUrl = `https://openweathermap.org/img/w/${day.weather[0].icon}.png`;
         
           // create child elements
           var dayEl = document.createElement("div");
