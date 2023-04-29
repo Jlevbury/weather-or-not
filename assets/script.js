@@ -164,13 +164,15 @@ submitBtn.addEventListener("click", () => {
     var location = locationInput.value;
 
       // Save the city name to local storage
-  var storedCities = JSON.parse(localStorage.getItem("cities")) || [];
-  if (!storedCities.includes(location)) {
-    storedCities.push(location);
-    localStorage.setItem("cities", JSON.stringify(storedCities));
-  }
-  var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&appid=" + apiKey+ "&units=imperial";
-    
+      var storedCities = JSON.parse(localStorage.getItem("cities")) || [];
+      if (!storedCities.includes(location)) {
+        storedCities.push(location);
+        localStorage.setItem("cities", JSON.stringify(storedCities));
+      }
+      getCurrentForecast(location);
+      getFiveDayForecast(location);
+  var queryURL = "https://api.openweathermap.org/geo/1.0/direct?q=" + location + "&appid=" + apiKey+ "&units=imperial";
+    console.log(queryURL);
    // Call the fetch function with the query URL
 fetch(queryURL)
   .then(response => response.json())
@@ -250,7 +252,7 @@ currWeather.innerHTML = "";
 
   ddFiveDay.addEventListener("click", () => {
     var location = locationInput.value;
-    let fiveDayURL = `https://api.openweathermap.org/data/2.5/forecast?q=${location}&cnt=40&appid=${apiKey}&units=imperial`
+    let fiveDayURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + location + "&appid=" + apiKey + "&units=imperial";
   
     fetch(fiveDayURL)
       .then(response => response.json())
