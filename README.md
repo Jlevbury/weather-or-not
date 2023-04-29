@@ -17,6 +17,10 @@ Some minor practice in function testing was also used during the process of deve
 N/A
 
 ## Usage
+The user enters the name of a city which they would like to check the current conditions for, then press the submit button. 
+The current conditions will then be displayed when clicking the "current conditions" drop down, to see a five day forecast, the same action is performed on the header below it listed as "five day forecast". 
+
+The city is then saved to local storage and can be accessed again by clicking the name of the city and performing the same actions for accessing the current and five day conditions.
 
 ![weatherDEMO](https://user-images.githubusercontent.com/125767916/234958144-f410a9aa-f9af-41f0-a9f8-ed48aa4f2e0d.gif)
 Typical user interface flow.
