@@ -171,7 +171,7 @@ submitBtn.addEventListener("click", () => {
       }
       getCurrentForecast(location);
       getFiveDayForecast(location);
-  var queryURL = "https://api.openweathermap.org/geo/1.0/direct?q=" + location + "&appid=" + apiKey+ "&units=imperial";
+  var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + location + "&appid=" + apiKey + "&units=imperial";
     console.log(queryURL);
    // Call the fetch function with the query URL
 fetch(queryURL)
